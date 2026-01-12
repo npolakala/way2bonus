@@ -1,0 +1,144 @@
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #1a1a1a;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+
+body.dark-mode nav {
+  background: #000;
+}
+
+.site-logo {
+  height: 40px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: #00c853;
+}
+
+body.dark-mode nav ul li a {
+  color: #bbb;
+}
+
+/* DARK MODE TOGGLE BUTTON */
+.dark-toggle {
+  background: transparent;
+  border: 1px solid #00c853;
+  color: #00c853;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.dark-toggle:hover {
+  background: #00c853;
+  color: #000;
+}
+
+body.dark-mode .dark-toggle {
+  border-color: #00e676;
+  color: #00e676;
+}
+
+body.dark-mode .dark-toggle:hover {
+  background: #00e676;
+  color: #000;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #00c853, #009624);
+  color: white;
+}
+
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #007a3a, #005f2c);
+}
+
+/* TABS SECTION */
+.tabs-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.tab-card {
+  flex: 1;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-left: 6px solid #00c853;
+}
+
+body.dark-mode .tab-card {
+  background: #1e1e1e;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+
+.tab-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+body.dark-mode .tab-card:hover {
+  box-shadow: 0 8px 20px rgba(255,255,255,0.08);
+}
+
+.tab-card h3 {
+  margin-top: 0;
+  color: #009624;
+}
+
+body.dark-mode .tab-card h3 {
+  color: #00e676;
+}
+
+/* BONUS LIST

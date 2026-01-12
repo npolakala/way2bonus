@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <title>Contact – Way2Bonus</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Contact Way2Bonus for questions, suggestions, or partnership opportunities.">
+  <meta name="keywords" content="Way2Bonus contact, support, referral bonuses">
+  <meta name="author" content="Way2Bonus">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+  <a href="index.html">
+    <img src="assets/logo.png" alt="Way2Bonus Logo" class="site-logo">
+  </a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+</nav>
+
+
+  <!-- CONTACT CONTENT -->
+  <section class="content">
+    <h1>Contact Us</h1>
+    <p>
+      Have a question, suggestion, or partnership opportunity?  
+      We’d love to hear from you.
+    </p>
+
+    <form class="contact-form" onsubmit="return sendEmail(event)">
+      <input id="name" type="text" placeholder="Your Name" required>
+      <input id="email" type="email" placeholder="Email Address" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p id="form-status"></p>
+
+    <p class="disclaimer">
+      *Bonus offers are subject to change at any time without notice from the respective providers.
+    </p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
