@@ -30,10 +30,12 @@ body.dark-mode nav {
 }
 
 .site-logo {
-  height: 40px;
-  margin-right: 20px;
-  vertical-align: middle;
+  height: 55px;              /* increased from 40px */
+  width: auto;               /* keeps aspect ratio */
+  object-fit: contain;       /* prevents distortion */
+  display: block;
 }
+
 
 nav ul {
   list-style: none;
@@ -85,37 +87,217 @@ body.dark-mode .dark-toggle:hover {
   background: #00e676;
   color: #000;
 }
+/* HERO TEXT INSIDE NAVBAR */
+.nav-hero-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  color: #00c853;
+}
 
-/* HERO */
+.nav-hero-text h1 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.nav-hero-text p {
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+body.dark-mode .nav-hero-text {
+  color: #00e676;
+}
+
+/* HERO — OPTIMIZED HEIGHT */
+/* HERO — ULTRA COMPACT */
+/* HERO — BLENDED + MINIMAL */
 .hero {
-  text-align: center;
-  padding: 120px 20px;
-  background: linear-gradient(135deg, #00c853, #009624);
-  color: white;
+  text-align: Center;
+  padding: 2px 1px;                 /* still compact */
+  background: linear-gradient(
+    135deg,
+    rgba(0, 200, 83, 0.08),
+    rgba(0, 150, 36, 0.08)
+  );                                   /* subtle tint */
+  color: #00c853;                      /* brand green text */
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 8px;                  /* soft blend with page */
 }
 
 body.dark-mode .hero {
-  background: linear-gradient(135deg, #007a3a, #005f2c);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 122, 58, 0.15),
+    rgba(0, 95, 44, 0.15)
+  );
+  color: #00e676;                      /* lighter green for dark mode */
 }
+
+.hero h1 {
+  font-size: 26px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 15px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .hero {
+    padding: 1px 1px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+}
+
 
 /* TABS SECTION */
+/* TABS SECTION — BLEND WITH NAVBAR */
 .tabs-section {
   max-width: 1100px;
-  margin: 40px auto;
+  margin: 0 auto;                 /* remove top spacing */
+  padding: 0 20px;
   display: flex;
-  gap: 20px;
-  padding: 20px;
+  gap: 12px;
+  /*position: relative;*/
+  top: -10px;                     /* pulls tabs upward toward navbar */
 }
 
+/* TAB CARDS — NAVBAR STYLE */
 .tab-card {
   flex: 1;
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background: #1a1a1a;            /* same as navbar */
+  padding: 14px 18px;             /* smaller, tighter */
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;      /* subtle border instead of shadow */
   cursor: pointer;
-  transition: 0.3s ease;
-  border-left: 6px solid #00c853;
+  transition: 0.25s ease;
+  color: #ccc;
+}
+
+body.dark-mode .tab-card {
+  background: #000;
+  border-color: #222;
+}
+
+/* Hover effect that matches nav link hover */
+.tab-card:hover {
+  border-color: #00c853;
+  color: #00c853;
+  transform: translateY(-2px);
+}
+
+/* Tab title */
+.tab-card h3 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  color: #00c853;
+}
+
+body.dark-mode .tab-card h3 {
+  color: #00e676;
+}
+
+/* Tab description */
+.tab-card p {
+  margin: 0;
+  font-size: 13px;
+  color: #aaa;
+}
+
+body.dark-mode .tab-card p {
+  color: #ccc;
+}
+
+
+/* BONUS LIST GRID */
+.bonus-list {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* BONUS ITEM CARD */
+.bonus-item {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* BONUS LOGO STANDARD SIZE */
+.bonus-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  /*margin: 0 auto 15px auto;
+  display: block;*/
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+/* BONUS LEFT: LOGO + TEXT INLINE */
+.bonus-left {
+  display: flex;
+  align-items: flex-start;        /* vertically center logo + text */
+  gap: 20px;                  /* spacing between logo and text */
+  min-height: 70px;
+  padding-bottom: 8px;
+}
+
+/* Ensure text block doesn't shrink */
+.bonus-left div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+.bonus-left h3 {
+  margin: 1px 0 5px;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.bonus-left p {
+  margin: 0;
+  font-size: 16px;
+  color: #555;
+}
+
+body.dark-mode .bonus-left p {
+  color: #ccc;
+}
+
+body.dark-mode .bonus-item {
+  background: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+
+.bonus-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 body.dark-mode .tab-card {
@@ -141,4 +323,480 @@ body.dark-mode .tab-card h3 {
   color: #00e676;
 }
 
-/* BONUS LIST
+.bonus-btn {
+  display: block;
+  text-align: center;
+  background: #00c853;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background 0.3s;
+  border: none; /* ensures no border */
+  outline: none; /* removes focus outline */
+}
+
+.bonus-btn:hover {
+  background: #009624;
+}
+
+body.dark-mode .bonus-btn {
+  background: #00e676;
+  color: #000;
+}
+
+/* FEATURED BADGE — SMALLER + CLEANER */
+.featured-star {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 200, 83, 0.12);   /* softer tint */
+  color: #00c853;                       /* brand green */
+  font-size: 12px;                      /* reduced from 16px */
+  font-weight: 600;
+  padding: 4px 8px;                     /* smaller padding */
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;                             /* tighter spacing */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  animation: featuredPulse 2.2s infinite ease-in-out;
+}
+
+/* Dark mode */
+body.dark-mode .featured-star {
+  background: rgba(0, 230, 118, 0.12);
+  color: #00e676;
+}
+
+/* Pulse animation (unchanged, still subtle) */
+@keyframes featuredPulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.04); opacity: 0.92; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Ensure bonus-item can position children absolutely 
+.bonus-item {
+  position: relative;
+}*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Make the middle hero text centered */
+.nav-hero-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #00c853;
+}
+
+body.dark-mode .nav-hero-text {
+  color: #00e676;
+}
+
+/* Keep nav-right aligned to the right */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #00c853;
+}
+@media (max-width: 768px) {
+
+  /* Show hamburger, hide desktop menu */
+  .hamburger {
+    display: block;
+  }
+
+  .nav-right {
+    display: none;                 /* hidden until opened */
+    flex-direction: column;
+    width: 100%;
+    background: #1a1a1a;
+    padding: 15px 0;
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+
+  body.dark-mode .nav-right {
+    background: #000;
+  }
+
+  .nav-right.open {
+    display: flex;                 /* show when toggled */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+    padding: 8px 0;
+  }
+
+  /* Center hero text better on mobile */
+  .nav-hero-text {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    padding: 12px 20px;
+  }
+}
+
+/* WRAPPER — centers the button */
+.bonus-of-day-wrapper {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 1px;
+}
+
+/* BUTTON — visually significant */
+.bonus-of-day-btn {
+  background: #00c853;                 /* brand green */
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: 0.25s ease;
+}
+
+/* Hover effect */
+.bonus-of-day-btn:hover {
+  background: #00b44a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Dark mode */
+body.dark-mode .bonus-of-day-btn {
+  background: #00e676;
+  color: #000;
+}
+/* MODAL BACKDROP */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+/* MODAL BOX */
+.modal-content {
+  background: #111;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* DOLLAR LOADER CONTAINER */
+.dollar-loader {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border: 3px solid #00c853;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* SKELETON FILL */
+.dollar-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #00c853;
+  transition: height 1s ease;
+}
+
+/* DOLLAR SYMBOL */
+.dollar-symbol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 64px;
+  font-weight: bold;
+  color: #fff;
+  opacity: 0.9;
+}
+/* BACKDROP */
+.result-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+/* POPUP BOX */
+.result-content {
+  background: #111;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 320px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* TOP-RIGHT X BUTTON */
+.close-x {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* BOTTOM-RIGHT CLOSE BUTTON 
+.close-btn {
+  margin-top: 25px;
+  background: #00c853;
+  color: #000;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+body.dark-mode .close-btn {
+  background: #00e676;
+}*/
+
+/* TEXT 
+.result-text {
+  font-size: 18px;
+  color: #fff;
+  margin-top: 20px;*/
+}
+/* BONUS TEXT */
+.result-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* CTA BUTTON */
+.bonus-link-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #00c853, #00e676);
+  color: #000;
+  padding: 14px 26px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 12px rgba(0, 200, 83, 0.35);
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+}
+
+/* Hover effect: lift + glow */
+.bonus-link-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 230, 118, 0.45);
+  background: linear-gradient(135deg, #00e676, #00c853);
+}
+
+/* Dark mode */
+body.dark-mode .bonus-link-btn {
+  background: linear-gradient(135deg, #00e676, #00c853);
+  color: #000;
+  box-shadow: 0 4px 12px rgba(0, 230, 118, 0.35);
+}
+
+.return-note {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ccc;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+body.dark-mode .return-note {
+  color: #aaa;
+}
+#trading,
+#forex,
+#creditcards {
+  scroll-margin-top: 100px;
+}
+@media (min-width: 768px) {
+  .contact-form,
+  form {
+    padding-left: 30px;
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.pagination button {
+  background: #00c853;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.pagination button:hover {
+  background: #009624;
+}
+
+.pagination button.active {
+  background: #009624;
+}
+
+body.dark-mode .pagination button {
+  background: #00e676;
+  color: #000;
+}
+
+body.dark-mode .pagination button.active {
+  background: #00c853;
+  color: #000;
+}
+
+/* FREEBIES GRID — dedicated, isolated */
+.freebies-list {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.freebie-item {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.freebie-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+body.dark-mode .freebie-item {
+  background: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+
+.freebie-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  min-height: 70px;
+  padding-bottom: 8px;
+  flex-shrink: 0;
+  margin-bottom: 20px
+}
+
+.freebie-left div {
+  display: flex;
+  flex-direction: column;
+}
+
+.freebie-left h3 {
+  margin: 1px 0 5px;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.freebie-left p {
+  margin: 0;
+  font-size: 16px;
+  color: #555;
+}
+
+body.dark-mode .freebie-left p {
+  color: #ccc;
+}
+
+.freebie-btn {
+  align-self: flex-end;     /* moves button to the right */
+  background: #00c853;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin-top: 20px;
+  border: none;
+  outline: none;
+}
+
+
+.freebie-btn:hover {
+  background: #009624;
+}
+
+body.dark-mode .freebie-btn {
+  background: #00e676;
+  color: #000;
+}
