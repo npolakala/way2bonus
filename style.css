@@ -244,6 +244,9 @@ body.dark-mode .tab-card p {
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1;
+  position: relative;
+  overflow: visible; /* THIS IS CRITICAL */
 }
 
 /* BONUS LOGO STANDARD SIZE */
@@ -264,6 +267,8 @@ body.dark-mode .tab-card p {
   gap: 20px;                  /* spacing between logo and text */
   min-height: 70px;
   padding-bottom: 8px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Ensure text block doesn't shrink */
@@ -352,17 +357,20 @@ body.dark-mode .bonus-btn {
   position: absolute;
   top: 8px;
   right: 8px;
-  background: rgba(0, 200, 83, 0.12);   /* softer tint */
+  background: rgba(0, 200, 83, 0.22);   /* softer tint */
   color: #00c853;                       /* brand green */
   font-size: 12px;                      /* reduced from 16px */
   font-weight: 600;
   padding: 4px 8px;                     /* smaller padding */
   border-radius: 6px;
+  opacity: 1 !important;
+  visibility: visible !important;
   display: flex;
   align-items: center;
   gap: 4px;                             /* tighter spacing */
   box-shadow: 0 1px 4px rgba(0,0,0,0.15);
   animation: featuredPulse 2.2s infinite ease-in-out;
+  z-index: 10;
 }
 
 /* Dark mode */
@@ -374,14 +382,10 @@ body.dark-mode .featured-star {
 /* Pulse animation (unchanged, still subtle) */
 @keyframes featuredPulse {
   0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.04); opacity: 0.92; }
+  50% { transform: scale(1.04); opacity: 0.81; }
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* Ensure bonus-item can position children absolutely 
-.bonus-item {
-  position: relative;
-}*/
 nav {
   display: flex;
   justify-content: space-between;
@@ -811,5 +815,6 @@ body.dark-mode .freebie-btn {
   position: absolute;
   left: -9999px;
 }
+
 
 
