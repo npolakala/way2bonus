@@ -800,3 +800,8 @@ body.dark-mode .freebie-btn {
   background: #00e676;
   color: #000;
 }
+.seo-desc {
+  position: absolute;
+  left: -9999px;
+}
+
