@@ -577,11 +577,15 @@ body.dark-mode .bonus-of-day-btn {
   background: #111;
   padding: 30px 40px;
   border-radius: 12px;
-  width: 320px;
-  position: relative;
+  width: 90%;              /* responsive */
+  max-width: 380px;        /* allow more room */
+  min-height: 180px;       /* ensures text fits */
+  box-sizing: border-box;  /* prevents overflow */
   text-align: center;
+  position: relative;
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
+
 
 /* TOP-RIGHT X BUTTON */
 .close-x {
@@ -615,7 +619,8 @@ body.dark-mode .close-btn {
 .result-text {
   font-size: 18px;
   color: #fff;
-  margin-top: 20px;*/
+  margin-top: 20px;
+  
 }
 /* BONUS TEXT */
 .result-text {
@@ -624,6 +629,8 @@ body.dark-mode .close-btn {
   color: #fff;
   margin-bottom: 20px;
   line-height: 1.4;
+  white-space: normal;
+  overflow-wrap: break-word;  
 }
 
 /* CTA BUTTON */
@@ -804,4 +811,5 @@ body.dark-mode .freebie-btn {
   position: absolute;
   left: -9999px;
 }
+
 
