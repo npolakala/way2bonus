@@ -19,17 +19,28 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav>
-  <a href="index.html">
-    <img src="assets/logo.png" alt="Way2Bonus Logo" class="site-logo">
-  </a>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
-</nav>
+	<nav>
+	  <a href="index.html">
+		<img src="assets/logo1.png" alt="Way2Bonus Logo" class="site-logo">
+	  </a>
+
+	  <div class="nav-hero-text">
+		<h1><strong>Your gateway to smarter rewards, deals, and bonuses</strong></h1>
+	  </div>
+
+	  <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+	  <div class="nav-right">
+		<ul class="nav-links">
+		  <li><a href="index.html">Bonuses</a></li>
+		  <li><a href="freebies.html">Freebies</a></li>
+		  <li><a href="about.html">About</a></li>
+		</ul>
+
+		<button class="dark-toggle" onclick="toggleDarkMode()">🌓</button>
+	  </div>
+	</nav>
+
 
 
   <!-- ABOUT CONTENT -->
@@ -53,7 +64,28 @@
 
     <p class="disclaimer">
       *Bonus offers are subject to change at any time without notice from the respective providers.
+	  All product names, logos, and brands are property of their respective owners. All company, product, and service names used on this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement. This website is not affiliated with, sponsored by, or endorsed by any of the companies whose logos are displayed.
     </p>
+  </section>
+  
+   <!-- CONTACT CONTENT -->
+  <section class="content">
+    <h1>Contact Us</h1>
+    <p>
+      Have a question, suggestion, or partnership opportunity?  
+      We’d love to hear from you.
+    </p>
+		<form class="contact-form" onsubmit="return sendEmail(event)">
+		 <input id="name" type="text" placeholder="Your Name" required>
+		 <p> <input id="email" type="email" placeholder="Email Address" required></p>
+		 <p><textarea id="message" placeholder="Your Message" required></textarea></p>
+		 <p><button type="submit">Send Message</button></p>
+		</form>
+    <p id="form-status"></p>
+
+    <!-- <p class="disclaimer">
+      *Bonus offers are subject to change at any time without notice from the respective providers.
+    </p> -->
   </section>
 
   <script src="script.js"></script>
