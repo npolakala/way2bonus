@@ -88,7 +88,7 @@ function toggleMenu() {
 
 // You control this value anywhere in your code:
 let bonusStatus = "Available";
-// let bonusStatus = "None";
+//let bonusStatus = "None";
 
 function openBonusPopup() {
   const modal = document.getElementById("bonusModal");
@@ -209,3 +209,18 @@ window.onload = () => {
   applyTheme(savedTheme || "light");
   setupPagination();
 };
+
+const rotatingWords = ["rewards", "deals", "bonuses"];
+const rotatingEl = document.getElementById("rotating-word");
+let wordIndex = 0;
+
+setInterval(() => {
+  rotatingEl.classList.add("hidden");
+
+  setTimeout(() => {
+    wordIndex = (wordIndex + 1) % rotatingWords.length;
+    rotatingEl.textContent = rotatingWords[wordIndex];
+    rotatingEl.classList.remove("hidden");
+  }, 400); // matches CSS fade duration
+}, 2000); // 2-second interval
+
