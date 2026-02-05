@@ -30,7 +30,7 @@ body.dark-mode nav {
 }
 
 .site-logo {
-  height: 55px;              /* increased from 40px */
+  height: 45px;              /* increased from 40px */
   width: auto;               /* keeps aspect ratio */
   object-fit: contain;       /* prevents distortion */
   display: block;
@@ -86,29 +86,6 @@ body.dark-mode .dark-toggle {
 body.dark-mode .dark-toggle:hover {
   background: #00e676;
   color: #000;
-}
-/* HERO TEXT INSIDE NAVBAR */
-.nav-hero-text {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  color: #00c853;
-}
-
-.nav-hero-text h1 {
-  font-size: 20px;
-  margin: 0;
-  font-weight: 600;
-}
-
-.nav-hero-text p {
-  font-size: 14px;
-  margin: 0;
-  opacity: 0.9;
-}
-
-body.dark-mode .nav-hero-text {
-  color: #00e676;
 }
 
 /* HERO — OPTIMIZED HEIGHT */
@@ -392,14 +369,42 @@ nav {
   align-items: center;
 }
 
-/* Make the middle hero text centered */
+/* Make the middle hero text centered 
 .nav-hero-text {
   position: absolute;
-  left: 50%;
+  left: 36%;
   transform: translateX(-50%);
   text-align: center;
   color: #00c853;
 }
+*/
+/* HERO TEXT INSIDE NAVBAR */
+.nav-hero-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0px;
+  color: #00c853;
+  text-align: right;
+  align-items: flex-start;
+}
+
+.nav-hero-text h1 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.nav-hero-text p {
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/*.nav-hero-text, 
+.nav-hero-text * {
+  text-align: left !important;
+}*/
+
 
 body.dark-mode .nav-hero-text {
   color: #00e676;
@@ -816,5 +821,9 @@ body.dark-mode .freebie-btn {
   left: -9999px;
 }
 
-
-
+#rotating-word {
+  transition: opacity 0.4s ease;
+}
+.hidden-word {
+  opacity: 0;
+}
