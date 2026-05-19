@@ -224,3 +224,18 @@ setInterval(() => {
     rotatingEl.classList.remove("hidden");
   }, 400); // matches CSS fade duration
 }, 2000); // 2-second interval
+
+//For pop up on FREEBIES
+function openGCPopup() {
+  document.getElementById("gc-popup-overlay").style.display = "flex";
+}
+
+function closeGCPopup() {
+  document.getElementById("gc-popup-overlay").style.display = "none";
+}
+
+window.addEventListener("load", function () {
+  setTimeout(() => {
+    openGCPopup();
+  }, 2400); // 2.4 seconds
+});
