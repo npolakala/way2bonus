@@ -114,7 +114,7 @@ function openBonusPopup() {
       }, 300);
     }
 
-    if (cycle >= 4) {
+    if (cycle >= 2) {
       clearInterval(interval);
 
       setTimeout(() => {
@@ -122,7 +122,7 @@ function openBonusPopup() {
         fill.style.height = "0%";
 
         openResultModal();
-      }, 800);
+      }, 600);
     }
 
   }, 1000);
