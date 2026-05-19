@@ -827,3 +827,154 @@ body.dark-mode .freebie-btn {
 .hidden-word {
   opacity: 0;
 }
+
+/* Great Clips PAGE LAYOUT */
+.gc-container {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+/* LEFT SECTION */
+.gc-left {
+  flex: 0 1 70%;
+}
+
+.gc-left h1 {
+  margin-bottom: 20px;
+  color: #00c853;
+}
+
+/* COUPON SECTION */
+.coupon-block {
+  margin-bottom: 35px;
+}
+
+.coupon-block h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+/* LINK CARDS */
+.coupon-link {
+  display: block;
+  background: white;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  word-break: break-all;
+}
+
+.coupon-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* RIGHT SECTION */
+.gc-right {
+  flex: 0 1 30%;
+}
+
+.gc-right h2 {
+  margin-bottom: 15px;
+  color: #00c853;
+}
+
+/* BONUS CARD STYLE */
+.bonus-item {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .gc-container {
+    flex-direction: column;
+  }
+}
+/* POPUP OVERLAY */
+.gc-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+}
+
+/* POPUP BOX */
+.gc-popup {
+  background: #fff;
+  width: 90%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  position: relative;
+  text-align: center;
+  animation: popupFadeIn 0.3s ease-out;
+}
+
+/* X BUTTON */
+.gc-popup-close-x {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* CLOSE BUTTON */
+.gc-popup-close-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #00c853;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.gc-popup-close-btn:hover {
+  background: #00b44b;
+}
+
+/* ANIMATION */
+@keyframes popupFadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.gc-popup-bonus-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 22px;
+  background: #00c853;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.gc-popup-bonus-btn:hover {
+  background: #00b44b;
+}
