@@ -114,7 +114,7 @@ function openBonusPopup() {
       }, 300);
     }
 
-    if (cycle >= 2) {
+    if (cycle >= 1) {
       clearInterval(interval);
 
       setTimeout(() => {
