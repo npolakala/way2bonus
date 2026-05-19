@@ -226,6 +226,17 @@ setInterval(() => {
 }, 2000); // 2-second interval
 
 //For pop up on FREEBIES
+// SHOW POPUP ON PAGE LOAD
+window.addEventListener("load", () => {
+  document.getElementById("gc-popup-overlay").style.display = "flex";
+});
+
+
+// CLOSE POPUP
+function closeGCPopup() {
+  document.getElementById("gc-popup-overlay").style.display = "none";
+}
+/*
 function openGCPopup() {
   document.getElementById("gc-popup-overlay").style.display = "flex";
 }
@@ -239,3 +250,4 @@ window.addEventListener("load", function () {
     openGCPopup();
   }, 2400); // 2.4 seconds
 });
+*/
