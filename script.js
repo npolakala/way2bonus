@@ -57,7 +57,7 @@ function sendEmail(event) {
     `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
   );
 
-  window.location.href = `mailto:npolakala@gmail.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:way2bonus@gmail.com?subject=${subject}&body=${body}`;
 
   document.getElementById("form-status").textContent =
     "Your email app should now open. If not, please send manually to way2bonus@gmail.com.";
@@ -134,8 +134,9 @@ function openResultModal() {
   const bonusLinkBtn = document.getElementById("bonusLinkBtn");
 
   if (bonusStatus === "Available") {
-    resultText.textContent = "Free coffee from Capital One";
-    bonusLinkBtn.href = "https://coffree.capitalone.com/sms/?cid=rqhjcz0eps&mc=IN";
+    resultText.textContent = "Free coffee from Capital One Cafe on MLB Mondays!";
+    bonusLinkBtn.href = "https://coffree.capitalone.com/sms/?mc=BP&cid=fzqpufjqcf";
+	//bonusLinkBtn.href = "https://coffree.capitalone.com/sms/?cid=rqhjcz0eps&mc=IN";
     bonusLinkBtn.style.display = "inline-block";
   } else {
     resultText.textContent = "No daily bonus available at the moment.";
@@ -223,4 +224,3 @@ setInterval(() => {
     rotatingEl.classList.remove("hidden");
   }, 400); // matches CSS fade duration
 }, 2000); // 2-second interval
-
